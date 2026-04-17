@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Outfit", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+}
+
+@layer base {
+  html, body, #root {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    @apply antialiased bg-slate-50 text-slate-900;
+  }
+}
+
+@layer components {
+  .premium-card {
+    @apply bg-white border border-slate-200/60 shadow-sm rounded-3xl transition-all duration-300;
+  }
+
+  .premium-card-hover {
+    @apply hover:shadow-2xl hover:shadow-rose-900/5 hover:-translate-y-1;
+  }
+
+  .premium-sidebar-item {
+    @apply flex items-center gap-3 px-4 py-3 rounded-2xl text-sm font-medium transition-all duration-200;
+  }
+
+  .premium-sidebar-item-active {
+    @apply bg-rose-50 text-rose-600 shadow-sm ring-1 ring-rose-100;
+  }
+
+  .premium-sidebar-item-inactive {
+    @apply text-slate-500 hover:bg-slate-100 hover:text-slate-900;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-track {
+    @apply bg-transparent;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    @apply bg-slate-200 rounded-full hover:bg-rose-200 transition-colors border-2 border-slate-50;
+  }
+
+  .scrollbar-none::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .scrollbar-none {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .markdown-content {
+    @apply text-slate-600 leading-relaxed;
+  }
+
+  .markdown-content p {
+    @apply mb-2 last:mb-0;
+  }
+
+  .markdown-content ul {
+    @apply list-disc list-inside mb-2 space-y-1;
+  }
+
+  .markdown-content li {
+    @apply text-[10px];
+  }
+
+  .markdown-content strong {
+    @apply font-bold text-slate-900;
+  }
+
+  .markdown-content code {
+    @apply px-1 py-0.5 bg-slate-100 rounded font-mono text-[9px] text-rose-600;
+  }
+}
